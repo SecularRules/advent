@@ -1,0 +1,15 @@
+#checking if this is roughly correct, steps to setup a new project:
+#
+#Make new repo on github
+#Make a folder in the right place, open it in vsc and make a file
+#git init
+#pip install uv (only needed once?)
+#pip install ruff (once in the venv? every time?)
+#couldnt do it without pip but you said something about that..
+#git branch -m master main - to rename
+#setup a .venv - last project vsc did it on its own, how to do that using uv?
+#dump a copy of .gitignore in the file?
+#dump a copy of ruff config in where? I don't see the folder now.
+#git commit -m "msg" - to get the first commit in, making a new branch before that gave issues?
+#now time to make a new branch?
+#
