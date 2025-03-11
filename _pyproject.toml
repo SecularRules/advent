@@ -1,0 +1,8 @@
+[tool.ruff]
+line-length = 100
+
+[pycodestyle]
+max-line-lenght = 120
+
+[tool.ruff.lint]
+select = ["E", "UP", "I", "F", "C90", "B"]
