@@ -1,0 +1,49 @@
+[tool.ruff]
+
+#set format length to 100, max to 120, add E501 so these are used
+line-length = 100
+[pycodestyle]
+ignore-overlong-task-comments = true
+max-doc-length = 120
+max-line-lenght = 120
+
+[tool.ruff.lint]
+#E4,E7,E9,F are default. Add to them here
+#B to add bugbear
+select = ["E4", "E7", "E9", "F", "E501", "B"]
+
+ignore = []
+
+#What does this actually do? coming from the example config. 
+extend-fixable = ["B"]
+#think I shouldnt have both of these.. but which one?
+#unfixable = ["B"] 
+
+[tool.ruff.lint.flake8-bugbear]
+#not too sure what this does
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
+
+[tool.ruff.lint.pyupgrade]
+#not really sure what this does tbh, something with preserving type info maybe while doing API stuff that I havent done yet.
+keep-runtime-typing = true
+
+#havent used pandas yet, maybe will be relevant later?
+[tool.ruff.lint.pyflakes]
+allowed-unused-imports = ["hvplot.pandas"]
+#not too sure what this does, might become relevant working with django
+extend-generics = ["django.db.models.ForeignKey"]
+
+#has quite a lot of options, for many I'm not sure what the value should be other than the default
+#some seem contratictory as well, I selected some that looked useful
+#does this first [] bit do something like activate rules, of it is just so it can be recognized?
+[tool.ruff.lint.isort]
+case-sensitive = true
+force-single-line = true
+force-sort-within-sections = true
+
+#very curious to this one, is 5 a good value or too low?
+[tool.ruff.lint.mccabe]
+max-complexity = 5
+
+[tool.ruff.format]
+#
