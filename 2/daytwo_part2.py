@@ -1,21 +1,23 @@
 def test_line(parts, retesting):
     difflist = []
-    for i in range(len(parts)-1):
-        diff = (int(parts[i+1]) - int(parts[i]))
+    for i in range(len(parts) - 1):
+        diff = int(parts[i + 1]) - int(parts[i])
         difflist.append(diff)
-    if all(x < 0 and x >=-3 for x in difflist) or all(x > 0 and x <=3 for x in difflist):
-        return True 
+    if all(x < 0 and x >= -3 for x in difflist) or all(x > 0 and x <= 3 for x in difflist):
+        return True
     else:
-        #only retest if you haven't yet
-        if retesting == False:
+        # only retest if you haven't yet
+        if not retesting:
             if retest_line(parts):
                 return True
 
+
 def retest_line(parts):
     for i in range(len(parts)):
-        check = parts[:i] + parts[i+1:]
+        check = parts[:i] + parts[i + 1 :]
         if test_line(check, True):
             return True
+
 
 def main():
     safe_amount = 0
@@ -27,5 +29,6 @@ def main():
                 safe_amount += 1
 
     print(safe_amount)
+
 
 main()
